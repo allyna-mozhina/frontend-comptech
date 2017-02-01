@@ -29,5 +29,8 @@
     "grunt-notify": "^0.4.5",
     "load-grunt-tasks": "^3.5.2",
     "time-grunt": "^1.4.0"
+  },
+   "scripts": {
+    "start": "grunt dev"
   }
 }
