@@ -1,0 +1,31 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "semi": 1,
+    "no-undef": 1,
+    "no-param-reassign": 1,
+    "eqeqeq": 1,
+    "no-dupe-class-members": 1,
+    "no-console": 1,
+    "no-alert": 1,
+    "no-debugger": 1,
+    "no-dupe-args": 1,
+    "no-dupe-keys": 1,
+    "no-duplicate-case": 1,
+    "no-empty": 1,
+    "no-extra-boolean-cast": 1,
+    "no-extra-semi": 1,
+    "no-obj-calls": 1,
+    "no-sparse-arrays": 1,
+    "no-unreachable": 1,
+    "no-unsafe-negation": 1,
+    "use-isnan": 1,
+    "valid-typeof": 1
+  },
+  "globals": {
+    "console": true,
+    "document": true
+  }
+}

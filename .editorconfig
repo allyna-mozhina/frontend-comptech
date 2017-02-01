@@ -1,0 +1,5 @@
+root = true
+
+[*.{js,less,html}]
+indent_size = 4
+indent_style = space
