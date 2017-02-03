@@ -47,6 +47,9 @@ module.exports = (grunt) => {
         less: {
             app: {
                 files: { './build/css/app.css': ['./src/app/**/*.less'] }
+            },
+            bootstrap: {
+                files: { './build/css/libs.css': ['./node_modules/bootstrap/dist/css/bootstrap.css'] }
             }
         },
 
