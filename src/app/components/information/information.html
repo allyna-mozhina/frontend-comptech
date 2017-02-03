@@ -1,0 +1,6 @@
+<ul class="questionsList">
+    <li class="questionsList__item" ng-repeat="question in $ctrl.items">
+        <a ui-sref="app.questionsItem({ id: question.id })" class="questionsList__link">{{question.question}}</a>&nbsp;
+        <span class="questionsList__delete" ng-click="$ctrl.delete(question.id)">X</span>
+    </li>
+</ul>
