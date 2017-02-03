@@ -8,7 +8,7 @@ function AppConfig($stateProvider, $urlRouterProvider) {
             controller: 'LayoutCtrl'
         });
 
-    $urlRouterProvider.otherwise('/questions');
+    $urlRouterProvider.otherwise('/questions'); //TODO: Change to mainpage or smtnhg
 }
 
 export default AppConfig;

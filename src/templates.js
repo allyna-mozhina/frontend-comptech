@@ -21,6 +21,11 @@ angular.module('templates', []).run(['$templateCache', function($templateCache) 
   );
 
 
+    $templateCache.put('./login/login.html',
+        "<div class=\"login\"><h2>Login</h2><form name=\"form\" ng-submit=\"$ctrl.doLogin()\" role=\"form\"><div class=\"\" ng-class=\"{ 'has-error': form.login.$dirty && form.login.$error.required }\"><label for=\"login\">{{$ctrl.loginLabelText}}</label><input type=\"text\" name=\"login\" id=\"login\" class=\"\" ng-model=\"$ctrl.login\" required> <span ng-show=\"form.login.$dirty && form.login.$error.required\" class=\"\">{{$ctrl.loginRequiredText}}</span></div><div class=\"\" ng-class=\"{ 'has-error': form.password.$dirty && form.password.$error.required }\"><label for=\"password\">{{$ctrl.passwordLabelText}}</label><input type=\"password\" name=\"password\" id=\"password\" class=\"\" ng-model=\"$ctrl.password\" required> <span ng-show=\"form.password.$dirty && form.password.$error.required\" class=\"\">{{$ctrl.passwordRequiredText}}</span></div><div class=\"\"><button type=\"submit\" ng-disabled=\"form.$invalid || $ctrl.dataLoading\" class=\"\">{{$ctrl.loginButtonText}}</button> <img ng-if=\"$ctrl.dataLoading\" src=\"{{$ctrl.dataLoadingImg}}\"> <a ng-href=\"#/register\" class=\"\">{{$ctrl.registerLinkText}}</a></div></form></div>"
+    );
+
+
   $templateCache.put('./questions/question.html',
     "<div class=\"question\"><h2>{{$ctrl.question.question}}</h2><a ui-sref=\"app.questions\" class=\"question__link\">Questions list</a><ul class=\"question__choices\"><li class=\"question__choicesItem\" ng-repeat=\"choice in $ctrl.question.choices\">{{choice.choice}}: {{choice.votes}} votes</li></ul><debugger model=\"$ctrl.questions\"></debugger></div>"
   );

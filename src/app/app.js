@@ -23,6 +23,7 @@ const requires = [
     'templates',
     'app.layout',
     'app.questions',
+    'app.login',
     'app.components',
     'app.services',
     'app.directives'
