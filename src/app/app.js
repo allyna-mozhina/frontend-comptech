@@ -14,6 +14,7 @@ import 'lodash';
 import '../templates';
 import './layout';
 import './questions';
+import './login';
 import './components';
 import './services';
 import './directives';

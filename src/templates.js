@@ -1,6 +1,11 @@
 angular.module('templates', []).run(['$templateCache', function($templateCache) {
   'use strict';
 
+  $templateCache.put('./components/login-form/login-form.html',
+    "<form name=\"form\" ng-submit=\"$ctrl.doLogin()\" role=\"form\"><div class=\"\" ng-class=\"{ 'has-error': form.login.$dirty && form.login.$error.required }\"><label for=\"login\">{{$ctrl.i18n.loginLabelText}}</label><input type=\"text\" name=\"login\" id=\"login\" class=\"\" ng-model=\"$ctrl.login\" required> <span ng-show=\"form.login.$dirty && form.login.$error.required\" class=\"\">{{$ctrl.i18n.loginRequiredText}}</span></div><div class=\"\" ng-class=\"{ 'has-error': form.password.$dirty && form.password.$error.required }\"><label for=\"password\">{{$ctrl.i18n.passwordLabelText}}</label><input type=\"password\" name=\"password\" id=\"password\" class=\"\" ng-model=\"$ctrl.password\" required> <span ng-show=\"form.password.$dirty && form.password.$error.required\" class=\"\">{{$ctrl.i18n.passwordRequiredText}}</span></div><div class=\"\"><button type=\"submit\" ng-disabled=\"form.$invalid || $ctrl.dataLoading\" class=\"\">{{$ctrl.i18n.loginButtonText}}</button> <img src=\"{{$ctrl.dataLoadingImg}}\" ng-if=\"$ctrl.dataLoading\"> <a ng-href=\"#/register\" class=\"\">{{$ctrl.i18n.registerLinkText}}</a></div></form>"
+  );
+
+
   $templateCache.put('./components/questions-list/questions-list.html',
     "<ul class=\"questionsList\"><li class=\"questionsList__item\" ng-repeat=\"question in $ctrl.items\"><a ui-sref=\"app.questionsItem({ id: question.id })\" class=\"questionsList__link\">{{question.question}}</a>&nbsp; <span class=\"questionsList__delete\" ng-click=\"$ctrl.delete(question.id)\">X</span></li></ul>"
   );
@@ -21,9 +26,9 @@ angular.module('templates', []).run(['$templateCache', function($templateCache) 
   );
 
 
-    $templateCache.put('./login/login.html',
-        "<div class=\"login\"><h2>Login</h2><form name=\"form\" ng-submit=\"$ctrl.doLogin()\" role=\"form\"><div class=\"\" ng-class=\"{ 'has-error': form.login.$dirty && form.login.$error.required }\"><label for=\"login\">{{$ctrl.loginLabelText}}</label><input type=\"text\" name=\"login\" id=\"login\" class=\"\" ng-model=\"$ctrl.login\" required> <span ng-show=\"form.login.$dirty && form.login.$error.required\" class=\"\">{{$ctrl.loginRequiredText}}</span></div><div class=\"\" ng-class=\"{ 'has-error': form.password.$dirty && form.password.$error.required }\"><label for=\"password\">{{$ctrl.passwordLabelText}}</label><input type=\"password\" name=\"password\" id=\"password\" class=\"\" ng-model=\"$ctrl.password\" required> <span ng-show=\"form.password.$dirty && form.password.$error.required\" class=\"\">{{$ctrl.passwordRequiredText}}</span></div><div class=\"\"><button type=\"submit\" ng-disabled=\"form.$invalid || $ctrl.dataLoading\" class=\"\">{{$ctrl.loginButtonText}}</button> <img ng-if=\"$ctrl.dataLoading\" src=\"{{$ctrl.dataLoadingImg}}\"> <a ng-href=\"#/register\" class=\"\">{{$ctrl.registerLinkText}}</a></div></form></div>"
-    );
+  $templateCache.put('./login/login.html',
+    "<div class=\"\"><h2>Login</h2><login-form items=\"$ctrl.strings\"></login-form><debugger model=\"$ctrl.strings\"></debugger></div>"
+  );
 
 
   $templateCache.put('./questions/question.html',
