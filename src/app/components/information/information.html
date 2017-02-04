@@ -1,6 +1,4 @@
-<ul class="information">
-    <div> <img src="picture.jpg"></div>
-    <div class="information__text">
-        <a ui-sref="app.informationText({ id: information.id })" class="information__link">{{information.information}}</a>&nbsp;
-    </div>
-</ul>
+<div>
+    <img src="{{$ctrl.pictureURL}}">
+    <p>{{$ctrl.text}}</p>
+</div>

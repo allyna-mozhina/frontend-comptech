@@ -2,7 +2,8 @@ import InformationCtrl from './information.controller';
 
 export default {
     bindings: {
-        texts: '='
+        text: '=',
+        pictureURL:'='
     },
     templateUrl: './components/information/information.html',
     controller: InformationCtrl,

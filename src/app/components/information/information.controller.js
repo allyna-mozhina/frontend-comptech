@@ -1,9 +1,5 @@
 class InformationCtrl {
-    constructor(Information) {
-        'ngInject';
-
-        this._Information = Information;
-    }
+    constructor() {}
 
 
 export default InformationCtrl;
