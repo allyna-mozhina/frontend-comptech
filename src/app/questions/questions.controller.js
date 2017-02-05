@@ -4,6 +4,10 @@ class QuestionsCtrl {
 
         this.questions = questions;
     }
+
+    login(loginInfo) {
+        alert(loginInfo);
+    }
 }
 
 export default QuestionsCtrl;
