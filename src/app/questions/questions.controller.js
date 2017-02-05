@@ -5,8 +5,8 @@ class QuestionsCtrl {
         this.questions = questions;
     }
 
-    login(loginInfo) {
-        alert(loginInfo);
+    login(formInfo, remember) {
+        alert(formInfo.login);
     }
 }
 
