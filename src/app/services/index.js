@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import QuestionsService from './questions.service';
 
-import FacessService from './faces.service';
+import FacesService from './faces.service';
 
 import PulseService from './pulse.service';
 
