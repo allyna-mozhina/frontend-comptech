@@ -1,0 +1,33 @@
+<div class="loginform">
+
+    <h1>ВОЙТИ</h1>
+
+    <ul ng-show="$ctrl.formErrors.length">
+        <li ng-repeat="error in $ctrl.formErrors track by $index">{{error}}</li>
+    </ul>
+
+    <form ng-submit="$ctrl.onLogin()">
+        <div>
+            <input type="text" ng-model="$ctrl.formData.login" id="loginField" placeholder="E-MAIL">
+        </div>
+        <div>
+            <input type="password" ng-model="$ctrl.formData.password" id="passwordField" placeholder="ПАРОЛЬ">
+        </div>
+        <div>
+            <input type="checkbox" id="rememberField" ng-model="$ctrl.remember" checked>
+            <label for="rememberField">Запомнить пароль</label>
+        </div>
+        <div>
+            <button type="submit" id="btn__loginField">ВОЙТИ</button>
+        </div>
+    </form>
+
+    <div>
+        <a href="">Забыли пароль?</a>
+    </div>
+
+    <div>
+        <label for="to__registrationField">Нет учетной записи?</label>
+        <a id="to__registrationField">Зарегистрироваться</a>
+    </div>
+</div>
