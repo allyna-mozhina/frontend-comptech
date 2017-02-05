@@ -15,6 +15,7 @@ import '../templates';
 import './layout';
 import './questions';
 import './login';
+import './training';
 import './components';
 import './services';
 import './directives';
@@ -25,6 +26,7 @@ const requires = [
     'app.layout',
     'app.questions',
     'app.login',
+    'app.training',
     'app.components',
     'app.services',
     'app.directives'
