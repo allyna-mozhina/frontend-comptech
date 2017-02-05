@@ -3,7 +3,7 @@
 
     <questions-list items="$ctrl.questions"></questions-list>
 
-    <login-form on-login="$ctrl.login"></login-form>
+    <login-form on-login="$ctrl.login()" form-data="$ctrl.loginFormData" form-errors="$ctrl.loginFormErrors"></login-form>
 
     <debugger model="$ctrl.questions"></debugger>
 </div>

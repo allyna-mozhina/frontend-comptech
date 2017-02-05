@@ -2,12 +2,16 @@
 
     <h1>ВОЙТИ</h1>
 
-    <form ng-submit="$ctrl.submit">
+    <ul ng-show="$ctrl.formErrors.length">
+        <li ng-repeat="error in $ctrl.formErrors track by $index">{{error}}</li>
+    </ul>
+
+    <form ng-submit="$ctrl.onLogin()">
         <div>
-            <input type="text" ng-model="$ctrl.form.login" id="loginField" placeholder="E-MAIL">
+            <input type="text" ng-model="$ctrl.formData.login" id="loginField" placeholder="E-MAIL">
         </div>
         <div>
-            <input type="password" ng-model="$ctrl.form.password" id="passwordField" placeholder="ПАРОЛЬ">
+            <input type="password" ng-model="$ctrl.formData.password" id="passwordField" placeholder="ПАРОЛЬ">
         </div>
         <div>
             <input type="checkbox" id="rememberField" ng-model="$ctrl.remember" checked>
