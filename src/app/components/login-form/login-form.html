@@ -1,33 +1,42 @@
-<div class="loginform">
+<div class="loginform my-login-form">
 
-    <h1>ВОЙТИ</h1>
+    <h2>Войти</h2>
 
     <ul ng-show="$ctrl.formErrors.length">
         <li ng-repeat="error in $ctrl.formErrors track by $index">{{error}}</li>
     </ul>
 
     <form ng-submit="$ctrl.onLogin()">
-        <div>
-            <input type="text" ng-model="$ctrl.formData.login" id="loginField" placeholder="E-MAIL">
+        <div class="form-group">
+            <input class="form-control" type="text" ng-model="$ctrl.formData.login" id="loginField"
+                   placeholder="e-mail">
         </div>
-        <div>
-            <input type="password" ng-model="$ctrl.formData.password" id="passwordField" placeholder="ПАРОЛЬ">
+        <div class="form-group">
+            <input class="form-control" type="password" ng-model="$ctrl.formData.password" id="passwordField"
+                   placeholder="Пароль">
+            <div class="col-md-7">
+                <label> <input type="checkbox" id="rememberField" ng-model="$ctrl.remember" checked> Запомнить компьютер</label>
+            </div>
+            <div class="col-md-5 my-text-right">
+                <a href="">Забыли пароль?</a>
+            </div>
         </div>
-        <div>
-            <input type="checkbox" id="rememberField" ng-model="$ctrl.remember" checked>
-            <label for="rememberField">Запомнить пароль</label>
+
+        <div class="form-group">
+            <button class="btn btn-primary btn-block my-login-btn" type="submit" id="btn__loginField">Войти</button>
         </div>
-        <div>
-            <button type="submit" id="btn__loginField">ВОЙТИ</button>
+
+        <div class="form-group">
+            <div class=" col-md-7">
+                <label for="to__registrationField">Нет учетной записи?</label>
+            </div>
+            <div class="col-md-5">
+                <a class="my-text-right" id="to__registrationField">Зарегистрироваться</a>
+            </div>
         </div>
+
+
     </form>
 
-    <div>
-        <a href="">Забыли пароль?</a>
-    </div>
 
-    <div>
-        <label for="to__registrationField">Нет учетной записи?</label>
-        <a id="to__registrationField">Зарегистрироваться</a>
-    </div>
 </div>
