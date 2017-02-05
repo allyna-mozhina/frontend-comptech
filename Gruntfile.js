@@ -82,6 +82,13 @@ module.exports = (grunt) => {
                     dest: './build/favicon.png'
                 }],
                 expand: true
+            },
+            images:{
+                files: [{
+                    src: './src/app/images/logo.png',
+                    dest: './build/images/logo.png'
+                }],
+                expand: true
             }
         },
 

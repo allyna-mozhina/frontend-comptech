@@ -9,7 +9,4 @@ export default class PulseService {
     get() {
         return this._$http.get(`${this._AppConstants.API_URL}/pulse/`);
     }
-
-
-
 }
