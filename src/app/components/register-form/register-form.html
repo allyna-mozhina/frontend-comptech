@@ -1,25 +1,22 @@
 <div class="registration">
-    <h2>Registration</h2>
+    <h2>РЕГИСТРАЦИЯ</h2>
 
     <form ng-submit="$ctrl.onRegister()">
 
         <div>
-            <label for="login">Username</label>
-            <input type="text" id="login" ng-model="$ctrl.login" required/>
+            <input type="text" id="login" ng-model="$ctrl.login" placeholder="E-MAIL" required/>
         </div>
 
         <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" ng-model="$ctrl.password" required/>
+            <input type="password" id="password" ng-model="$ctrl.password" placeholder="ПАРОЛЬ" required/>
         </div>
 
         <div>
-            <label for="passwordConfirm">Confirm Password</label>
-            <input type="password" id="passwordConfirm" ng-model="$ctrl.passwordConfirm" required/>
+            <input type="password" id="passwordConfirm" ng-model="$ctrl.passwordConfirm" placeholder="ПОВТОРИТЕ ПАРОЛЬ" required/>
         </div>
 
         <div>
-            <button type="submit">Sign Up</button>
+            <button type="submit">РЕГИСТРАЦИЯ</button>
         </div>
 
     </form>
