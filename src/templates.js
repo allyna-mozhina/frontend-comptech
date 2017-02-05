@@ -1,28 +1,8 @@
 angular.module('templates', []).run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('./components/information/information.html',
-    "<div class=\"info\"><div class=\"my-info\"><div class=\"container\"></div></div><!--<p>{{'information_description' | translate}}</p>--><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>"
-  );
-
-
-  $templateCache.put('./components/login-form/login-form.html',
-    "<div class=\"my-login-form\"><h2>Войти</h2><ul ng-show=\"$ctrl.formErrors.length\"><li ng-repeat=\"error in $ctrl.formErrors track by $index\">{{error}}</li></ul><form ng-submit=\"$ctrl.onLogin()\"><div class=\"form-group\"><input class=\"form-control\" type=\"text\" ng-model=\"$ctrl.formData.login\" id=\"loginField\" placeholder=\"e-mail\"></div><div class=\"form-group\"><input class=\"form-control\" type=\"password\" ng-model=\"$ctrl.formData.password\" id=\"passwordField\" placeholder=\"Пароль\"><div class=\"col-md-7\"><label><input type=\"checkbox\" id=\"rememberField\" ng-model=\"$ctrl.remember\" checked> Запомнить компьютер</label></div><div class=\"col-md-5 my-text-right\"><a href=\"\">Забыли пароль?</a></div></div><div class=\"form-group\"><button class=\"btn btn-danger btn-block my-login-btn\" type=\"submit\" id=\"btn__loginField\">Войти</button></div><div class=\"form-group\"><div class=\"col-md-7\"><label for=\"to__registrationField\">Нет учетной записи?</label></div><div class=\"col-md-5\"><a class=\"my-text-right\" id=\"to__registrationField\">Зарегистрироваться</a></div></div></form></div>"
-  );
-
-
   $templateCache.put('./components/questions-list/questions-list.html',
     "<ul class=\"questionsList\"><li class=\"questionsList__item\" ng-repeat=\"question in $ctrl.items\"><a ui-sref=\"app.questionsItem({ id: question.id })\" class=\"questionsList__link\">{{question.question}}</a>&nbsp; <span class=\"questionsList__delete\" ng-click=\"$ctrl.delete(question.id)\">X</span></li></ul>"
-  );
-
-
-  $templateCache.put('./components/register-form/register-form.html',
-    "<div class=\"registration\"><h2>РЕГИСТРАЦИЯ</h2><form ng-submit=\"$ctrl.onRegister()\"><div><input type=\"text\" id=\"login\" ng-model=\"$ctrl.formData.login\" placeholder=\"E-MAIL\" required></div><div><input type=\"password\" id=\"password\" ng-model=\"$ctrl.formData.password\" placeholder=\"ПАРОЛЬ\" required></div><div><input type=\"password\" id=\"passwordConfirm\" ng-model=\"$ctrl.formData.passwordConfirm\" placeholder=\"ПОВТОРИТЕ ПАРОЛЬ\" required></div><div><button type=\"submit\">РЕГИСТРАЦИЯ</button></div></form></div>"
-  );
-
-
-  $templateCache.put('./components/state-info/state-info.html',
-    "<dev><p>{{$ctrl.pulse}}<span>&hearts;</span></p></dev><dev><p>{{'training_state' | translate}}</p></dev>"
   );
 
 
@@ -32,17 +12,12 @@ angular.module('templates', []).run(['$templateCache', function($templateCache) 
 
 
   $templateCache.put('./index.html',
-    "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Example App</title><link rel=\"icon\" type=\"image/png\" href=\"favicon.png\"></head><body><div ui-view></div><link rel=\"stylesheet\" href=\"./css/libs.css\"><link rel=\"stylesheet\" href=\"./css/app.css\"><script src=\"./js/libs.js\"></script><script src=\"./js/app.js\"></script></body></html>"
+    "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Example App</title><link rel=\"icon\" type=\"image/png\" href=\"favicon.png\"></head><body><div ui-view></div><link rel=\"stylesheet\" href=\"./css/app.css\"><script src=\"./js/libs.js\"></script><script src=\"./js/app.js\"></script></body></html>"
   );
 
 
   $templateCache.put('./layout/layout.html',
-    "<div class=\"layout\"><nav class=\"navbar navbar-default\"><div class=\"container-fluid\"><div class=\"navbar-header\"><a class=\"navbar-brand\" href=\"#\">СЕРВИС</a></div><div class=\"navbar-collapse\" id=\"bs-example-navbar-collapse-1\"><ul class=\"nav navbar-nav navbar-right\"><li><button type=\"button\" class=\"btn btn-default navbar-btn\">Выход</button></li></ul></div><!-- /.navbar-collapse --></div><!-- /.container-fluid --></nav><div ui-view></div></div>"
-  );
-
-
-  $templateCache.put('./login/login.html',
-    "<div class=\"row\"><div class=\"col-md-6\"><information></information></div><div class=\"col-md-6\"><login-form on-login=\"$ctrl.login()\" form-data=\"$ctrl.loginFormData\" form-errors=\"$ctrl.loginFormErrors\"></login-form></div></div>"
+    "<div class=\"layout\"><h1 class=\"layout__title\">Questions App</h1><div ui-view></div></div>"
   );
 
 
@@ -52,12 +27,7 @@ angular.module('templates', []).run(['$templateCache', function($templateCache) 
 
 
   $templateCache.put('./questions/questions.html',
-    "<div class=\"questions\"><h2>Questions</h2><questions-list items=\"$ctrl.questions\"></questions-list><!--<login-form on-login=\"$ctrl.login()\" form-data=\"$ctrl.loginFormData\" form-errors=\"$ctrl.loginFormErrors\"></login-form>--><debugger model=\"$ctrl.questions\"></debugger></div>"
-  );
-
-
-  $templateCache.put('./training/training.html',
-    "<div class=\"\"><h2>Training</h2><!--<photo-form items=\"$ctrl.strings\"></photo-form>--><!--<status-form items=\"$ctrl.strings\"></status-form>--><!--<questions-list items=\"$ctrl.questions\"></questions-list>--><!--<login-form items=\"$ctrl.questions\"></login-form>--><debugger model=\"$ctrl.questions\"></debugger></div>"
+    "<div class=\"questions\"><h2>Questions</h2><questions-list items=\"$ctrl.questions\"></questions-list><debugger model=\"$ctrl.questions\"></debugger></div>"
   );
 
 }]);

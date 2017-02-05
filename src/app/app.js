@@ -14,6 +14,7 @@ import 'lodash';
 import '../templates';
 import './layout';
 import './questions';
+import './register';
 import './login';
 import './training';
 import './components';
@@ -25,6 +26,7 @@ const requires = [
     'templates',
     'app.layout',
     'app.questions',
+    'app.register',
     'app.login',
     'app.training',
     'app.components',
