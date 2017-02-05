@@ -7,9 +7,7 @@ function RegisterConfig($stateProvider) {
             templateUrl: './register/register.html',
             controller: 'RegisterCtrl',
             controllerAs: '$ctrl',
-            resolve: {
-
-            }
+            resolve: {}
         });
 }
 

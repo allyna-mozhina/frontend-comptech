@@ -1,5 +1,8 @@
-<div>
-    <!-- info-component -->
-
-    <!-- regform-component -->
+<div class="row">
+    <div class="col-md-6">
+        <information></information>
+    </div>
+    <div class="col-md-6">
+        <register-form on-register="$ctrl.register()" form-data="$ctrl.registerFormData" form-errors="$ctrl.registerFormErrors"></register-form>
+    </div>
 </div>
