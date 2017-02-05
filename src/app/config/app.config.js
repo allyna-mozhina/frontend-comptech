@@ -8,7 +8,7 @@ function AppConfig($stateProvider, $urlRouterProvider) {
             controller: 'LayoutCtrl'
         });
 
-    $urlRouterProvider.otherwise('/questions');
+    $urlRouterProvider.otherwise('/login');
 }
 
 export default AppConfig;
