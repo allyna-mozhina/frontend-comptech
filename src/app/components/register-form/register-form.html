@@ -1,16 +1,26 @@
-<ul class="questionsList">
-    <li class="questionsList__item" ng-repeat="question in $ctrl.items">
-        <a ui-sref="app.questionsItem({ id: question.id })" class="questionsList__link">{{question.question}}</a>&nbsp;
-        <span class="questionsList__delete" ng-click="$ctrl.delete(question.id)">X</span>
-    </li>
-</ul>
+<div class="registration">
+    <h2>Registration</h2>
 
+    <form ng-submit="$ctrl.onRegister()">
 
-<p>Registration</p>
+        <div>
+            <label for="login">Username</label>
+            <input type="text" id="login" ng-model="$ctrl.login" required/>
+        </div>
 
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" ng-model="$ctrl.password" required/>
+        </div>
 
-<input class="registerForm" name="login" placeholder="Логин">
-<input class="registerForm" name="password1" type="password" placeholder="Пароль">
-<input class="registerForm" name="password2" type="password" placeholder="Повторите пароль">
+        <div>
+            <label for="passwordConfirm">Confirm Password</label>
+            <input type="password" id="passwordConfirm" ng-model="$ctrl.passwordConfirm" required/>
+        </div>
 
-<button class="registerForm" ng-click="$ctrl.LogIn()">{{Вход}}</button>
+        <div>
+            <button type="submit">Sign Up</button>
+        </div>
+
+    </form>
+</div>
