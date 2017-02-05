@@ -1,0 +1,23 @@
+<div class="registration">
+    <h2>РЕГИСТРАЦИЯ</h2>
+
+    <form ng-submit="$ctrl.onRegister()">
+
+        <div>
+            <input type="text" id="login" ng-model="$ctrl.formData.login" placeholder="E-MAIL" required/>
+        </div>
+
+        <div>
+            <input type="password" id="password" ng-model="$ctrl.formData.password" placeholder="ПАРОЛЬ" required/>
+        </div>
+
+        <div>
+            <input type="password" id="passwordConfirm" ng-model="$ctrl.formData.passwordConfirm" placeholder="ПОВТОРИТЕ ПАРОЛЬ" required/>
+        </div>
+
+        <div>
+            <button type="submit">РЕГИСТРАЦИЯ</button>
+        </div>
+
+    </form>
+</div>
