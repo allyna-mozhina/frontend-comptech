@@ -1,5 +1,5 @@
 function RegisterConfig($stateProvider) {
-    'ngIngect';
+    'ngInject';
 
     $stateProvider
         .state('app.register', {
