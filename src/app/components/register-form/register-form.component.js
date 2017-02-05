@@ -2,9 +2,8 @@ import RegisterFormCtrl from './register-form.controller';
 
 export default {
     bindings: {
-        login: '=',
-        password: '=',
-        passwordConfirm: '=',
+        formData: '=',
+        formErrors: '=',
         onRegister: '&'
     },
     templateUrl: './components/register-form/register-form.html',

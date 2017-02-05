@@ -4,15 +4,15 @@
     <form ng-submit="$ctrl.onRegister()">
 
         <div>
-            <input type="text" id="login" ng-model="$ctrl.login" placeholder="E-MAIL" required/>
+            <input type="text" id="login" ng-model="$ctrl.formData.login" placeholder="E-MAIL" required/>
         </div>
 
         <div>
-            <input type="password" id="password" ng-model="$ctrl.password" placeholder="ПАРОЛЬ" required/>
+            <input type="password" id="password" ng-model="$ctrl.formData.password" placeholder="ПАРОЛЬ" required/>
         </div>
 
         <div>
-            <input type="password" id="passwordConfirm" ng-model="$ctrl.passwordConfirm" placeholder="ПОВТОРИТЕ ПАРОЛЬ" required/>
+            <input type="password" id="passwordConfirm" ng-model="$ctrl.formData.passwordConfirm" placeholder="ПОВТОРИТЕ ПАРОЛЬ" required/>
         </div>
 
         <div>
