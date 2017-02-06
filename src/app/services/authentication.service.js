@@ -8,8 +8,9 @@ export default class AuthService {
     }
 
     register(formData) {
-
+        return this._$http.post(`${this._AppConstants.API_URL}/connect/register`, formData);
     }
+
 
     login(formData) {
         return this._$http({
