@@ -1,6 +1,11 @@
+import _ from 'lodash';
+
 class LoginCtrl {
-    constructor() {
+    constructor(Auth, AppConstants) {
         'ngInject';
+
+        this._Auth = Auth;
+        this._AppConstants = AppConstants;
 
         // Login Form
         this.loginFormData = {};
@@ -8,11 +13,18 @@ class LoginCtrl {
     }
 
     login() {
-        console.log('send', this.loginFormData);
-        // TODO Тут обращаемся к сервису, в промисе получаем ответ и реализуем нужную логику
+        this.loginFormData['grant_type'] = this._AppConstants.GRANT_TYPE;
 
-        this.loginFormErrors.push('Ошибочка вышла');
-        this.loginFormErrors.push('Что-то пошло не так!');
+        const AUTH_FIELDS = ['login', 'password', 'grant_type'];
+        const postData = _.pick(this.loginFormData, AUTH_FIELDS);
+
+        console.log('send', postData);
+
+        return this._Auth.login(postData).then(
+            ({ data }) =>  {
+                this._Auth.setToken(data['access_token'], this.loginFormData.remember);
+            },
+            (error) => this.loginFormErrors.push(error));
     }
 }
 
