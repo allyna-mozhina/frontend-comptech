@@ -1,4 +1,4 @@
-function AppRun($rootScope, $window) {
+function AppRun($rootScope, $state, $window, Auth) {
     'ngInject';
 
     $rootScope.$on('$viewContentLoaded', ({ targetScope }) =>
@@ -6,6 +6,14 @@ function AppRun($rootScope, $window) {
 
     $rootScope.$on('$stateChangeStart', (event, toState) =>
         $window.console.log(`%c TRANSITION BEGINS: ${toState.name}`, 'color: #827717', toState));
+
+    $rootScope.$on('$stateChangeStart', (event, toState) => {
+        if (toState.isAuthRequired && !Auth.isAuthorized()) {
+            $window.console.log(`%c REDIRECT BEGINS: ${$state.current.name}`, 'color: #827717', $state.current);
+            event.preventDefault();
+            $state.go('app.login');
+        }
+    });
 
     $rootScope.$on('$stateChangeSuccess', (event, toState) =>
         $window.console.log(`%c TRANSITION COMPLETED: ${toState.name}`, 'color: #33691e', toState));
