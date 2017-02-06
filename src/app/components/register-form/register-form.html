@@ -1,22 +1,27 @@
-<div class="registration">
-    <h2>РЕГИСТРАЦИЯ</h2>
+<div class="registerform my-register-form">
+
+    <h2>Регистрация</h2>
+
+    <ul ng-show="$ctrl.formErrors.length">
+        <li ng-repeat="error in $ctrl.formErrors track by $index">{{error}}</li>
+    </ul>
 
     <form ng-submit="$ctrl.onRegister()">
-
-        <div>
-            <input type="text" id="login" ng-model="$ctrl.formData.login" placeholder="E-MAIL" required/>
+        <div class="form-group">
+            <input class="form-control" type="text" id="loginField" ng-model="$ctrl.formData.login" 
+                   placeholder="e-mail" required/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" id="passwordField" ng-model="$ctrl.formData.password" 
+                   placeholder="Пароль" required/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" id="passwordConfirmField" ng-model="$ctrl.formData.passwordConfirm" 
+                   placeholder="Повторите пароль" required/>
         </div>
 
-        <div>
-            <input type="password" id="password" ng-model="$ctrl.formData.password" placeholder="ПАРОЛЬ" required/>
-        </div>
-
-        <div>
-            <input type="password" id="passwordConfirm" ng-model="$ctrl.formData.passwordConfirm" placeholder="ПОВТОРИТЕ ПАРОЛЬ" required/>
-        </div>
-
-        <div>
-            <button type="submit">РЕГИСТРАЦИЯ</button>
+        <div class="form-group">
+            <button class="btn btn-danger btn-block my-register-btn" type="submit" id="btn_registerField">Регистрация</button>
         </div>
 
     </form>

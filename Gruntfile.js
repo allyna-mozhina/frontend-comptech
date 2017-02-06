@@ -34,10 +34,10 @@ module.exports = (grunt) => {
                 ],
                 dest: './build/js/app.js',
                 options: {
-                    browserifyOptions: { debug: true },
+                    browserifyOptions: {debug: true},
                     transform: [['babelify', {
                         presets: ['es2015'],
-                        plugins: [['angularjs-annotate', { explicitOnly: true }]]
+                        plugins: [['angularjs-annotate', {explicitOnly: true}]]
                     }]],
                     external: LIBS
                 }
@@ -46,10 +46,13 @@ module.exports = (grunt) => {
 
         less: {
             app: {
-                files: { './build/css/app.css': ['./src/app/**/*.less'] }
+                files: {'./build/css/app.css': ['./src/app/**/*.less']}
             },
             bootstrap: {
-                files: { './build/css/libs.css': ['./node_modules/bootstrap/dist/css/bootstrap.css'] }
+                files: {
+                    './build/css/libs.css': ['./node_modules/font-awesome/css/font-awesome.css',
+                        './node_modules/bootstrap/dist/css/bootstrap.css']
+                }
             }
         },
 
@@ -82,6 +85,22 @@ module.exports = (grunt) => {
                     dest: './build/favicon.png'
                 }],
                 expand: true
+            },
+            images: {
+                files: [{
+                    cwd: './src/app/images/',
+                    src: ['**'],
+                    dest: './build/images/',
+                    expand: true
+                }],
+            },
+            fonts: {
+                files: [{
+                    cwd: './node_modules/font-awesome/fonts/',
+                    src: ['**'],
+                    dest: './build/fonts/',
+                    expand: true
+                }],
             }
         },
 
@@ -108,7 +127,7 @@ module.exports = (grunt) => {
                 src: ['./src/app/**/*.js'],
                 options: {
                     configFile: 'eslint.json',
-                    parserOptions: { sourceType: 'module' }
+                    parserOptions: {sourceType: 'module'}
                 }
             }
         },
@@ -117,22 +136,28 @@ module.exports = (grunt) => {
             scripts: {
                 files: ['./src/app/**/*.js'],
                 tasks: ['eslint', 'browserify:app', 'notify:build'],
-                options: { spawn: false }
+                options: {spawn: false}
             },
             styles: {
                 files: ['./src/app/**/*.less'],
                 tasks: ['less:app', 'notify:build'],
-                options: { spawn: false }
+                options: {spawn: false}
             },
             templates: {
                 files: ['./src/app/**/*.html'],
                 tasks: ['ngtemplates:app', 'browserify:app', 'notify:build'],
-                options: { spawn: false }
+                options: {spawn: false}
             },
             index: {
                 files: ['./src/app/index.html'],
                 tasks: ['copy:index', 'notify:build'],
-                options: { spawn: false }
+                options: {spawn: false}
+            }
+            ,
+            images: {
+                files: ['./src/app/images/*.png'],
+                tasks: ['copy:images', 'notify:build'],
+                options: {spawn: false}
             }
         },
 
@@ -150,7 +175,8 @@ module.exports = (grunt) => {
                 bsFiles: {
                     src: [
                         './build/**/*.less',
-                        './build/**/*.js'
+                        './build/**/*.js',
+                        './build/**/*.png'
                     ]
                 },
                 options: {

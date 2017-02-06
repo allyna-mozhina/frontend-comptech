@@ -2,14 +2,13 @@
 
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">СЕРВИС</a>
             </div>
 
             <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" ng-show="isAuthorized()">
                     <li>
                         <button type="button" class="btn btn-default navbar-btn">Выход</button>
                     </li>
