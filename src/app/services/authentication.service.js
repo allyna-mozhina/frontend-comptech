@@ -8,8 +8,9 @@ export default class AuthService {
     }
 
     register(formData) {
-
+        return this._$http.post(`${this._AppConstants.API_URL}/connect/register`, formData);
     }
+
 
     login(formData) {
         return this._$http({
@@ -27,14 +28,19 @@ export default class AuthService {
     }
 
     getToken() {
-        return sessionStorage.getItem(this._AppConstants.TOKEN_KEY);
+        return sessionStorage.getItem(this._AppConstants.TOKEN_KEY)
+            || localStorage.getItem(this._AppConstants.TOKEN_KEY);
     }
 
-    remember(token) {
-        sessionStorage.setItem(this._AppConstants.TOKEN_KEY, token);
+    setToken(token, remember) {
+        if (remember)
+            localStorage.setItem(this._AppConstants.TOKEN_KEY, token);
+        else
+            sessionStorage.setItem(this._AppConstants.TOKEN_KEY, token);
     }
 
     logout() {
+        localStorage.removeItem(this._AppConstants.TOKEN_KEY);
         sessionStorage.removeItem(this._AppConstants.TOKEN_KEY);
     }
 }
