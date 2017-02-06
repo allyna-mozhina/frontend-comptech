@@ -18,3 +18,44 @@
     margin: 50px auto;
     width: 80%;
 }
+
+@keyframes heartbeat
+{
+    0%
+    {
+        transform: scale( .75 );
+    }
+    30%
+    {
+        transform: scale( 1 );
+    }
+    66%
+    {
+        transform: scale( .75 );
+    }
+    100%
+    {
+        transform: scale( .75 );
+    }
+}
+
+.heart {
+    animation: heartbeat 0.7s infinite;
+    background-image: url("/images/heart.svg") 0 0 no-repeat;
+    //background-size: cover;
+    height: 288px;
+    width: 315px;
+}
+
+.heart-container {
+    height: 288px;
+    width: 315px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.text-pulse {
+    font-size: 50px;
+    font-family: Roboto;
+    text-align: center;
+}
