@@ -14,7 +14,15 @@ function TrainingConfig($stateProvider) {
 
                     return Pulse.get().then(
                         ({data}) => data,
-                        (error) => $state.go('app.404')
+                        (error) => console.log(error)
+                    );
+                },
+                photo(Photo, $state) {
+                    'ngInject';
+
+                    return Photo.get().then(
+                        ({data}) => data,
+                        (error) => console.log(error)
                     );
                 }
             }

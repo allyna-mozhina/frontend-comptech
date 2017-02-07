@@ -1,5 +1,5 @@
 class TrainingCtrl {
-    constructor($interval, $scope, Pulse, info) {
+    constructor($interval, $scope, Pulse, info, Photo, photo) {
         'ngInject';
 
         this._$interval = $interval;
@@ -7,11 +7,12 @@ class TrainingCtrl {
 
         this.isTraining = this._stateToBool(info.state);
         this.pulse = info.pulse;
+        this.photo = "data:image/jpeg;base64," + photo.photo;
+        this.coordinates = photo.coordinates;
 
         this.timer = this.setTimer();
         $scope.$on('$destroy', () => $interval.cancel(this.timer));
 
-        this.photo = "http://gorabbit.ru/upload/uploader/23d/23dae1e5c7c29744e0a22766a13b170a.jpeg";
     };
 
     _stateToBool(state) {
@@ -21,13 +22,13 @@ class TrainingCtrl {
     setTimer() {
         const self = this;
 
-        return this._$interval(function() {
+        return this._$interval(function () {
             return self._Pulse.get().then(
                 ({data}) => {
                     self.isTraining = self._stateToBool(data.state);
                     self.pulse = data.pulse
                 },
-                (error) => $state.go('app.404')
+                (error) => console.log(error)
             );
         }, 1000);
     }
