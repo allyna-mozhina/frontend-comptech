@@ -10,13 +10,15 @@ export default class PulseService {
     }
 
     get() {
-        //return new Promise((resolve) => { resolve({data:{ state: 'no', pulse: _.random(60, 120) }})});
-        return this._$http({
-            url: `${this._AppConstants.API_URL}/rest/pulse`,
-            method: 'GET',
-            headers: {
-                'Authorization': this._AppConstants.TOKEN_TYPE + ' ' +  this._Auth.getToken()
-            }
+        return new Promise((resolve) => {
+            resolve({data: {state: 'yes', pulse: _.random(60, 120)}})
         });
+        //return this._$http({
+        //    url: `${this._AppConstants.API_URL}/rest/pulse`,
+        //    method: 'GET',
+        //    headers: {
+        //        'Authorization': this._AppConstants.TOKEN_TYPE + ' ' +  this._Auth.getToken()
+        //    }
+        //});
     }
 }

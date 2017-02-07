@@ -7,7 +7,7 @@ function TrainingConfig($stateProvider) {
             templateUrl: './training/training.html',
             controller: 'TrainingCtrl',
             controllerAs: '$ctrl',
-            isAuthRequired: false, //TODO change to true
+            isAuthRequired: true,
             resolve: {
                 info(Pulse, $state) {
                     'ngInject';

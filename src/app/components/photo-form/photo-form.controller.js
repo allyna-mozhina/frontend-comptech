@@ -1,11 +1,12 @@
 class PhotoFormCtrl {
-    constructor($scope, $document) {
+    constructor($scope) {
         'ngInject';
 
         $scope.top = this.coordinates.topLeft.x + "px";
         $scope.left = this.coordinates.topLeft.y + "px";
         $scope.right = this.coordinates.bottomRight.x + "px";
         $scope.bottom = this.coordinates.bottomRight.y + "px";
+
 
     };
 }

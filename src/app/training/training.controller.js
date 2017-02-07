@@ -32,7 +32,7 @@ class TrainingCtrl {
                 },
                 (error) => console.log(error)
             );
-        }, 1000);
+        }, 3000);
     }
 
 

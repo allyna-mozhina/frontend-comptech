@@ -12,7 +12,7 @@ angular.module('templates', []).run(['$templateCache', function($templateCache) 
 
 
   $templateCache.put('./components/photo-form/photo-form.html',
-    "<div class=\"my-photo-form\"><div class=\"photo-container\"><img id=\"imageid\" src=\"{{$ctrl.photo}}\"><div class=\"face\" ng-style=\"{'top': top, 'left': left,'right': right,'bottom': bottom }\"></div></div><span>{{$ctrl.coordinates}} {{$ctrl.height}} {{$ctrl.width}}</span></div>"
+    "<div class=\"my-photo-form\"><div class=\"photo-container\"><img src=\"{{$ctrl.photo}}\"><div class=\"face\" ng-style=\"{'top': top, 'left': left,'right': right,'bottom': bottom, 'opacity':$ctrl.pulse*0.005}\"></div></div><span>{{$ctrl.coordinates}}</span></div>"
   );
 
 
@@ -67,7 +67,7 @@ angular.module('templates', []).run(['$templateCache', function($templateCache) 
 
 
   $templateCache.put('./training/training.html',
-    "<div class=\"row\"><div class=\"col-md-6\"><photo-form photo=\"$ctrl.photo\" coordinates=\"$ctrl.coordinates\"></photo-form></div><div class=\"col-md-6\"><state-info is-training=\"$ctrl.isTraining\" pulse=\"$ctrl.pulse\"></state-info></div></div>"
+    "<div class=\"row\"><div class=\"col-md-6\"><photo-form photo=\"$ctrl.photo\" coordinates=\"$ctrl.coordinates\" pulse=\"$ctrl.pulse\"></photo-form></div><div class=\"col-md-6\"><state-info is-training=\"$ctrl.isTraining\" pulse=\"$ctrl.pulse\"></state-info></div></div>"
   );
 
 }]);

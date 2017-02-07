@@ -24,15 +24,17 @@
 }
 
 .face {
+    //animation: faceColor 3s infinite;;
     position: absolute;
-   //top: 50px;
-   //right: 50px;
-   //left: 50px;
-   //bottom: 50px;
+    //top: 50px;
+    //right: 50px;
+    //left: 50px;
+    //bottom: 50px;
     color: red;
     background-color: red;
-    opacity: 0.2;
-    border: dotted whitesmoke;
+    //opacity: 0.2;
+
+    border: 2px dotted rgba(255, 255, 255, 0.8);
 }
 
 .square {
@@ -49,92 +51,50 @@
     animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes color_change {
+@-webkit-keyframes faceColor {
     0% {
-        background-color: blue;
-    }
-    25% {
-        background-color: orange;
+        opacity: 0.1;
     }
     50% {
-        background-color: yellow;
-    }
-    75% {
-        background-color: black;
+        opacity: 0.6;
     }
     100% {
-        background-color: red;
+        opacity: 0.1;
     }
 }
 
-@-moz-keyframes color_change {
+@-moz-keyframes faceColor {
     0% {
-        background-color: blue;
-    }
-    25% {
-        background-color: orange;
+        opacity: 0.1;
     }
     50% {
-        background-color: yellow;
-    }
-    75% {
-        background-color: black;
+        opacity: 0.6;
     }
     100% {
-        background-color: red;
+        opacity: 0.1;
     }
 }
 
-@-ms-keyframes color_change {
+@-o-keyframes faceColor {
     0% {
-        background-color: blue;
-    }
-    25% {
-        background-color: orange;
+        opacity: 0.1;
     }
     50% {
-        background-color: yellow;
-    }
-    75% {
-        background-color: black;
+        opacity: 0.6;
     }
     100% {
-        background-color: red;
+        opacity: 0.1;
     }
 }
 
-@-o-keyframes color_change {
+@keyframes faceColor {
     0% {
-        background-color: blue;
-    }
-    25% {
-        background-color: orange;
+        opacity: 0.1;
     }
     50% {
-        background-color: yellow;
-    }
-    75% {
-        background-color: black;
+        opacity: 0.6;
     }
     100% {
-        background-color: red;
-    }
-}
-
-@keyframes color_change {
-    0% {
-        background-color: blue;
-    }
-    25% {
-        background-color: orange;
-    }
-    50% {
-        background-color: yellow;
-    }
-    75% {
-        background-color: black;
-    }
-    100% {
-        background-color: red;
+        opacity: 0.1;
     }
 }
