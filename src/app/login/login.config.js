@@ -7,6 +7,7 @@ function LoginConfig($stateProvider) {
             templateUrl: './login/login.html',
             controller: 'LoginCtrl',
             controllerAs: '$ctrl',
+            isAuthRequired: false,
             resolve: {}
         });
 }
