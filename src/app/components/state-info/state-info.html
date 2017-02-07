@@ -1,9 +1,5 @@
 <div class="my-state-form">
-    <div class="heart-container">
-        <svg class="heart" width="315" height="288">
-            <image xlink:href="/images/heart.svg" width="315" height="288"/>
-        </svg>
-    </div>
+    <div class="heart" heartbeat-animation-duration="{{$ctrl.pulse}}"></div>
     <div class="text-pulse">
         <span>{{$ctrl.pulse}} bpm</span>
             <!--<p>{{'training_state' | translate}}</p>-->
