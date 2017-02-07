@@ -1,9 +1,13 @@
 <div class="my-photo-form">
+
     <div class="photo-container">
-
-        <img src="{{$ctrl.photo}}">
-
-        <div class="face">
+        <img id="imageid" src="{{$ctrl.photo}}">
+        <div class="face" ng-style="{'top': top, 'left': left,'right': right,'bottom': bottom }">
         </div>
     </div>
+    <span>
+        {{$ctrl.coordinates}}
+        {{$ctrl.height}}
+        {{$ctrl.width}}
+    </span>
 </div>

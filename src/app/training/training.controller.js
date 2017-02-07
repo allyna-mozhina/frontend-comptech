@@ -8,7 +8,9 @@ class TrainingCtrl {
         this.isTraining = this._stateToBool(info.state);
         this.pulse = info.pulse;
         this.photo = "data:image/jpeg;base64," + photo.photo;
-        this.coordinates = photo.coordinates;
+        this.coordinates = photo.recognitionResult.coordinates;
+
+        //photo.recognitionResult.valid
 
         this.timer = this.setTimer();
         $scope.$on('$destroy', () => $interval.cancel(this.timer));

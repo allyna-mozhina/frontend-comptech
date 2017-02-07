@@ -7,12 +7,12 @@ angular.module('templates', []).run(['$templateCache', function($templateCache) 
 
 
   $templateCache.put('./components/login-form/login-form.html',
-    "<div class=\"my-login-form\"><h2>Войти</h2><ul ng-show=\"$ctrl.formErrors.length\"><li ng-repeat=\"error in $ctrl.formErrors track by $index\">{{error}}</li></ul><form ng-submit=\"$ctrl.onLogin()\"><div class=\"form-group\"><input class=\"form-control\" type=\"text\" ng-model=\"$ctrl.formData.login\" id=\"loginField\" placeholder=\"e-mail\"></div><div class=\"form-group\"><input class=\"form-control\" type=\"password\" ng-model=\"$ctrl.formData.password\" id=\"passwordField\" placeholder=\"Пароль\"><div class=\"col-md-7\"><label><input type=\"checkbox\" id=\"rememberField\" ng-model=\"$ctrl.remember\" checked> Запомнить компьютер</label></div><div class=\"col-md-5 my-text-right\"><a href=\"\">Забыли пароль?</a></div></div><div class=\"form-group\"><button class=\"btn btn-danger btn-block my-login-btn\" type=\"submit\" id=\"btn__loginField\">Войти</button></div><div class=\"form-group\"><div class=\"col-md-7\"><label for=\"to__registrationField\">Нет учетной записи?</label></div><div class=\"col-md-5\"><a ng-href=\"#/register\" class=\"my-text-right\" id=\"to__registrationField\">Зарегистрироваться</a></div></div></form></div>"
+    "<div class=\"my-login-form\"><h2>Войти</h2><ul ng-show=\"$ctrl.formErrors.length\"><li ng-repeat=\"error in $ctrl.formErrors track by $index\">{{error}}</li></ul><form ng-submit=\"$ctrl.onLogin()\"><div class=\"form-group\"><input class=\"form-control\" type=\"text\" ng-model=\"$ctrl.formData.username\" id=\"loginField\" placeholder=\"Email\"></div><div class=\"form-group\"><input class=\"form-control\" type=\"password\" ng-model=\"$ctrl.formData.password\" id=\"passwordField\" placeholder=\"Пароль\"><div class=\"col-md-7 col-sm-4 checkbox\"><label><input type=\"checkbox\" id=\"rememberField\" ng-model=\"$ctrl.remember\" checked> Запомнить компьютер</label></div><div class=\"col-md-5 my-text-right\"><a href=\"\">Забыли пароль?</a></div></div><div class=\"form-group\"><button class=\"btn btn-danger btn-block my-login-btn\" type=\"submit\" id=\"btn__loginField\">Войти</button></div><div class=\"form-group\"><div class=\"col-md-7 col-sm-3\"><label for=\"to__registrationField\">Нет учетной записи?</label></div><div class=\"col-md-5 my-text-right1\"><a ui-sref=\"app.register\" class=\"my-text-right\" id=\"to__registrationField\">Зарегистрироваться</a></div><div class=\"clearfix\"></div></div></form></div>"
   );
 
 
   $templateCache.put('./components/photo-form/photo-form.html',
-    "<div class=\"my-photo-form\"><div class=\"photo-container\"><div class=\"square\"></div><img src=\"{{$ctrl.photo}}\"></div></div>"
+    "<div class=\"my-photo-form\"><div class=\"photo-container\"><img id=\"imageid\" src=\"{{$ctrl.photo}}\"><div class=\"face\" ng-style=\"{'top': top, 'left': left,'right': right,'bottom': bottom }\"></div></div><span>{{$ctrl.coordinates}} {{$ctrl.height}} {{$ctrl.width}}</span></div>"
   );
 
 
@@ -22,12 +22,12 @@ angular.module('templates', []).run(['$templateCache', function($templateCache) 
 
 
   $templateCache.put('./components/register-form/register-form.html',
-    "<div class=\"registerform my-register-form\"><h2>Регистрация</h2><ul ng-show=\"$ctrl.formErrors.length\"><li ng-repeat=\"error in $ctrl.formErrors track by $index\">{{error}}</li></ul><form ng-submit=\"$ctrl.onRegister()\"><div class=\"form-group\"><input class=\"form-control\" type=\"text\" id=\"loginField\" ng-model=\"$ctrl.formData.login\" placeholder=\"e-mail\" required></div><div class=\"form-group\"><input class=\"form-control\" type=\"password\" id=\"passwordField\" ng-model=\"$ctrl.formData.password\" placeholder=\"Пароль\" required></div><div class=\"form-group\"><input class=\"form-control\" type=\"password\" id=\"passwordConfirmField\" ng-model=\"$ctrl.formData.passwordConfirm\" placeholder=\"Повторите пароль\" required></div><div class=\"form-group\"><button class=\"btn btn-danger btn-block my-register-btn\" type=\"submit\" id=\"btn_registerField\">Регистрация</button></div></form></div>"
+    "<div class=\"registerform my-register-form\"><h2>Регистрация</h2><ul ng-show=\"$ctrl.formErrors.length\"><li ng-repeat=\"error in $ctrl.formErrors track by $index\">{{error}}</li></ul><form ng-submit=\"$ctrl.onRegister()\"><div class=\"form-group\"><input class=\"form-control\" type=\"text\" id=\"loginField\" ng-model=\"$ctrl.formData.userName\" placeholder=\"Email\" required></div><div class=\"form-group\"><input class=\"form-control\" type=\"password\" id=\"passwordField\" ng-model=\"$ctrl.formData.password\" placeholder=\"Пароль\" required></div><div class=\"form-group\"><input class=\"form-control\" type=\"password\" id=\"passwordConfirmField\" ng-model=\"$ctrl.formData.passwordConfirm\" placeholder=\"Повторите пароль\" required></div><div class=\"form-group\"><button class=\"btn btn-danger btn-block my-register-btn\" type=\"submit\" id=\"btn_registerField\">Регистрация</button></div></form></div>"
   );
 
 
   $templateCache.put('./components/state-info/state-info.html',
-    "<div class=\"my-state-form\"><div class=\"pulse\"><span>{{$ctrl.pulse}} <i class=\"fa fa-heart heart\"></i></span></div><div><!--<p>{{'training_state' | translate}}</p>--><p>Lorem ipsum</p></div></div>"
+    "<div class=\"my-state-form\"><div class=\"connect-error\" ng-show=\"!$ctrl.isTraining\"><div id=\"rectangle\"><span class=\"p-style\">Тренировка не началась</span></div></div><div ng-show=\"$ctrl.isTraining\"><div class=\"heart-container\"><svg class=\"heart\" width=\"315\" height=\"288\" heartbeat-animation-duration=\"{{$ctrl.pulse}}\"><image xlink:href=\"/images/heart.svg\" width=\"315\" height=\"288\"/></svg></div><div class=\"text-pulse\"><span>{{$ctrl.pulse}} bpm</span></div></div></div>"
   );
 
 
@@ -42,7 +42,7 @@ angular.module('templates', []).run(['$templateCache', function($templateCache) 
 
 
   $templateCache.put('./layout/layout.html',
-    "<div class=\"layout\"><nav class=\"navbar navbar-default\"><div class=\"container-fluid\"><div class=\"navbar-header\"><a class=\"navbar-brand\" href=\"#\">СЕРВИС</a></div><div class=\"navbar-collapse\" id=\"bs-example-navbar-collapse-1\"><ul class=\"nav navbar-nav navbar-right\"><li><button type=\"button\" class=\"btn btn-default navbar-btn\">Выход</button></li></ul></div><!-- /.navbar-collapse --></div><!-- /.container-fluid --></nav><div ui-view></div></div>"
+    "<div class=\"layout\"><nav class=\"navbar navbar-default\"><div class=\"container-fluid\"><div class=\"navbar-header\"><a class=\"navbar-brand\" href=\"#\">СЕРВИС</a></div><div class=\"navbar-collapse\" id=\"bs-example-navbar-collapse-1\"><ul class=\"nav navbar-nav navbar-right\" ng-show=\"isAuthorized()\"><li><button type=\"button\" class=\"btn btn-default navbar-btn\" ng-click=\"quit()\">Выход</button></li></ul></div><!-- /.navbar-collapse --></div><!-- /.container-fluid --></nav><div ui-view></div></div>"
   );
 
 
@@ -67,7 +67,7 @@ angular.module('templates', []).run(['$templateCache', function($templateCache) 
 
 
   $templateCache.put('./training/training.html',
-    "<div class=\"row\"><div class=\"col-md-6\"><photo-form photo=\"$ctrl.photo\"></photo-form></div><div class=\"col-md-6\"><state-info pulse=\"$ctrl.pulse\"></state-info></div></div>"
+    "<div class=\"row\"><div class=\"col-md-6\"><photo-form photo=\"$ctrl.photo\" coordinates=\"$ctrl.coordinates\"></photo-form></div><div class=\"col-md-6\"><state-info is-training=\"$ctrl.isTraining\" pulse=\"$ctrl.pulse\"></state-info></div></div>"
   );
 
 }]);
