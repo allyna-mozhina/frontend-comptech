@@ -1,5 +1,4 @@
 .heart {
-    //font-size: 100px;
     color: red;
     animation: blinker 1s linear infinite;
     margin: auto;
@@ -23,39 +22,30 @@
 {
     0%
     {
-        transform: scale( .75 );
+        transform: scale( .85 );
     }
     30%
     {
         transform: scale( 1 );
     }
-    66%
+    90%
     {
-        transform: scale( .75 );
+        transform: scale( .85 );
     }
     100%
     {
-        transform: scale( .75 );
+        transform: scale( .85 );
     }
 }
 
 .heart {
     animation: heartbeat 0.7s infinite;
-    background-image: url("/images/heart.svg") 0 0 no-repeat;
-    //background-size: cover;
-    height: 288px;
-    width: 315px;
-}
-
-.heart-container {
-    height: 288px;
-    width: 315px;
-    margin-left: auto;
-    margin-right: auto
+    background: url("/images/heart.svg") 0 0 no-repeat;
+    height: 60px;
+    width: 60px;
 }
 
 .text-pulse {
-    font-size: 50px;
-    font-family: Roboto;
+    font: 50px Roboto;
     text-align: center;
 }
