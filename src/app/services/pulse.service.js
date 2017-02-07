@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default class PulseService {
     constructor($http, Auth, AppConstants) {
         'ngInject';
@@ -8,6 +10,7 @@ export default class PulseService {
     }
 
     get() {
+        //return new Promise((resolve) => { resolve({data:{ state: 'no', pulse: _.random(60, 120) }})});
         return this._$http({
             url: `${this._AppConstants.API_URL}/rest/pulse`,
             method: 'GET',

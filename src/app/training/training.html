@@ -3,6 +3,7 @@
         <photo-form photo="$ctrl.photo"></photo-form>
     </div>
     <div class="col-md-6">
-        <state-info pulse="$ctrl.pulse"></state-info>
+        <p ng-show="!$ctrl.isTraining">Тренировка не началась</p>
+        <state-info ng-show="$ctrl.isTraining" pulse="$ctrl.pulse"></state-info>
     </div>
 </div>
