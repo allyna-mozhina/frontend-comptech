@@ -21,7 +21,7 @@ class TrainingCtrl {
     setTimer() {
         const self = this;
 
-        this.timer = this._$interval(function() {
+        return this._$interval(function() {
             return self._Pulse.get().then(
                 ({data}) => {
                     self.isTraining = self._stateToBool(data.state);

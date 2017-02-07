@@ -15,6 +15,14 @@ function AppRun($rootScope, $state, $window, Auth) {
         }
     });
 
+    $rootScope.$on('$stateChangeStart', (event, toState) => {
+        if ((toState.name == 'app.login' || toState.name == 'app.register') && Auth.isAuthorized()) {
+            $window.console.log(`%c REDIRECT BEGINS: ${$state.current.name}`, 'color: #827717', $state.current);
+            event.preventDefault();
+            $state.go('app.training');
+        }
+    });
+
     $rootScope.$on('$stateChangeSuccess', (event, toState) =>
         $window.console.log(`%c TRANSITION COMPLETED: ${toState.name}`, 'color: #33691e', toState));
 
